@@ -9,7 +9,7 @@ pipeline {
     
     stage('Helm command') {
       steps {
-        sh 'helm install demochat'
+        sh 'helm install demochat --generate-name'
       }
     }
 
