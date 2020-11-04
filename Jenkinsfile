@@ -3,13 +3,13 @@ pipeline {
   stages {
     stage('Git checkout') {
       steps {
-        sh 'kubectl get node'
+        git 'git@github.com:kamalpsoni/testing.git'
       }
     }
     
     stage('Helm command') {
       steps {
-        sh 'helm list'
+        sh 'helm install demochat'
       }
     }
 
