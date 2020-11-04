@@ -1,0 +1,6 @@
+replicas: 2
+max: 4
+maxUnavailable: 2
+image: "containers101/demochat:2.0"
+containerPort: 5000
+nodePort: 30005
