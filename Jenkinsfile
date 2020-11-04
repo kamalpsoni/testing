@@ -7,7 +7,7 @@ pipeline {
       }
     }
     
-    stage('Helm command') {
+    stage('Helm deployment') {
       steps {
         sh 'helm install demochat --generate-name'
       }
