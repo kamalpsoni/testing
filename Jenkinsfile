@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Git checkout') {
       steps {
-        git 'git@github.com:kamalpsoni/testing.git'
+        sh 'helm version'
       }
     }
     
