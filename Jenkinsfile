@@ -7,9 +7,18 @@ pipeline {
       }
     }
 
-    stage('Helm deployment1232') {
+    stage('Helm deployment') {
       steps {
         sh 'helm install demochat --generate-name'
+      }
+    }
+    
+    stage('deployment status') {
+      steps {
+        sh 'kubectl get deployment'
+        sh 'kubectl get pod'
+        sh 'kubectl get services'
+        
       }
     }
 
