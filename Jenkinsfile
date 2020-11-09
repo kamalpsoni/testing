@@ -18,6 +18,7 @@ pipeline {
         sh 'kubectl get deployment'
         sh 'kubectl get pod'
         sh 'kubectl get services'
+        sh 'helm list'
         
       }
     }
