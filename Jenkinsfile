@@ -3,9 +3,8 @@ pipeline {
   stages {
     stage('helm package creation') {
       steps {
-        sh 'helm version'
-        sh 'cd /etc/ansible/ansible-demo/'
         sh 'helm package demochat'
+        sh 'cp /var/lib/jenkins/workspace/*.tgz  /etc/ansible/ansible-demo'
       }
     }
 
