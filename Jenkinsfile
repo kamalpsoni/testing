@@ -1,15 +1,17 @@
 pipeline {
   agent any
   stages {
-    stage('Git checkout') {
+    stage('helm package creation') {
       steps {
         sh 'helm version'
+        sh 'cd /etc/ansible/ansible-demo/'
+        sh 'helm package demochat'
       }
     }
 
     stage('Helm deployment') {
       steps {
-        sh 'helm install demochat --generate-name'
+        sh 'ansible --version'
       }
     }
     
