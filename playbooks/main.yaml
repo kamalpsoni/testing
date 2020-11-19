@@ -7,17 +7,16 @@
 
     - name: copy deployment package to remote server
       copy:
-        src: ./playbooks/*.tgz
+        src: /var/lib/jenkins/workspace/Demo-ACH_master/demochat-0.1.0.tgz
         dest: /home/ubuntu/tmp/
         mode: 0644
-    
-    - name: copy deployment script
+
+    - name: copy deployment package to remote server
       copy:
-        src: ./playbooks/main.sh
+        src: /home/ubuntu/environment/kamal/ansible-demo/testing/playbooks/main.s
         dest: /home/ubuntu/tmp/
-        mode: 0644
+        mode: 0644    
 
-    - name: create deployment list
-      script: ./ubuntu/tmp/main.sh
+    - name: deploy helm chart
+      script: main.sh
 
-  #delegate_to: localhost
