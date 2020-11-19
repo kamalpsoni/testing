@@ -7,6 +7,13 @@ pipeline {
         
       }
     }
+    
+    stage('Copy package to input files') {
+      steps {
+        sh 'cp  ./Demo-ACH_master/*.tgz ./playbooks/files '
+        
+      }
+    }
 
     stage('Run Ansible playbook') {
       steps {
