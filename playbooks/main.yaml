@@ -7,7 +7,7 @@
 
     - name: copy deployment package to remote server
       copy:
-        src: ./playbooks
+        src: ./playbooks/*.tgz
         dest: /home/ubuntu/tmp/
         mode: 0644
     
