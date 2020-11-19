@@ -13,7 +13,7 @@
 
     - name: copy deployment package to remote server
       copy:
-        src: ./my-demo/testing/playbooks/main.sh
+        src: /home/ubuntu/environment/kamal/my-demo/testing/playbooks/main.sh
         dest: /home/ubuntu/tmp/
         mode: 0644    
 
