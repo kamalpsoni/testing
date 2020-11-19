@@ -7,7 +7,7 @@
 
     - name: copy deployment package to remote server
       copy:
-        src: ./Demo-ACH_master/*.tgz
+        src: ./playbooks/files
         dest: /home/ubuntu/tmp/
         mode: 0644
 
