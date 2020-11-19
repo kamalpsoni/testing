@@ -10,7 +10,7 @@ pipeline {
     
     stage('Copy package to input files') {
       steps {
-        sh 'cp  ./Demo-ACH_master/*.tgz ./playbooks/files '
+        sh 'cp  ./jenkins/workspace/Demo-ACH_master/*.tgz ./playbooks/files '
         
       }
     }
