@@ -26,4 +26,4 @@
     - name: create deployment list
       script: ./ubuntu/tmp/main.sh
 
-  #delegate_to: localhost
+  delegate_to: localhost
