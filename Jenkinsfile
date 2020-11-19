@@ -8,13 +8,7 @@ pipeline {
       }
     }
     
-    stage('Copy package to input files') {
-      steps {
-        sh 'cp  /var/lib/jenkins/workspace/Demo-ACH_master/*.tgz ./playbooks '
-        
-      }
-    }
-
+    
     stage('Run Ansible playbook') {
       steps {
         sh 'cd ./playbooks && chmod 400 key.pem && ansible-playbook  main.yaml '
