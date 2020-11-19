@@ -10,7 +10,7 @@ pipeline {
 
     stage('Run Ansible playbook') {
       steps {
-        sh 'cd /home/ubuntu/environment/kamal/ansible-demo/testing/playbooks'
+        sh 'cd ./testing/playbooks'
         sh 'ansible-playbook -i inventory main.yaml'
       }
     }
