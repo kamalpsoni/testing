@@ -7,16 +7,10 @@
 
     - name: copy deployment package to remote server
       copy:
-        src: ./playbooks/files
+        src: ./playbooks
         dest: /home/ubuntu/tmp/
         mode: 0644
-
-    # - name: Unarchive a file that is already on the remote machine
-      # unarchive:
-        # src: /tmp/foo.zip
-        # dest: /usr/local/bin
-        # remote_src: yes    
-
+    
     - name: copy deployment script
       copy:
         src: ./playbooks/main.sh
