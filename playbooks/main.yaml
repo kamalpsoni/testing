@@ -1,0 +1,21 @@
+---
+- name: helm deployment template creation
+  hosts: all
+  gather_facts: False
+   
+  tasks:
+
+    - name: copy deployment package to remote server
+      copy:
+        src: "{{src_file}}/*.tgz"
+        dest: "{{dest_file}}"
+        mode: 0644
+
+    - name: copy deployment script
+      copy:
+        src: /home/ubuntu/environment/kamal/ansible-demo/playbooks/main.sh
+        dest: "{{dest_file}}"
+        mode: 0644
+
+    - name: create deployment list
+      shell: main.sh

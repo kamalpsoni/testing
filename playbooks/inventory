@@ -1,0 +1,12 @@
+[servers]
+
+kamalMasterNode0 ansible_host=172.31.35.187
+jenkins-server ansible_host=172.31.43.218 
+
+
+[servers:vars]
+ansible_user= ubuntu
+ansible_ssh_private_key_file = ./key.pem
+src_file =  /var/lib/jenkins/workspace/Demo-ACH_master/
+dest_file = /home/ubuntu/ansible-demo/input/
+
