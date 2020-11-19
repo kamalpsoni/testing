@@ -1,21 +1,32 @@
 ---
-- name: helm deployment template creation
-  hosts: all
+- name: helm deployment 
+  hosts: servers
   gather_facts: False
    
   tasks:
 
     - name: copy deployment package to remote server
       copy:
-        src: "{{src_file}}/*.tgz"
-        dest: "{{dest_file}}"
+        #src: "{{src_file}}/*.tgz"
+        #dest: "{{dest_file}}"
+        src: /var/lib/jenkins/workspace/Demo-ACH_master/*.tgz
+        dest: /home/ubuntu/ansible-demo/input/
         mode: 0644
+
+    # - name: Unarchive a file that is already on the remote machine
+      # unarchive:
+        # src: /tmp/foo.zip
+        # dest: /usr/local/bin
+        # remote_src: yes    
 
     - name: copy deployment script
       copy:
-        src: /home/ubuntu/environment/kamal/ansible-demo/playbooks/main.sh
-        dest: "{{dest_file}}"
+        src: /home/ubuntu/environment/kamal/ansible-demo/testing/playbooks/main.sh
+        #dest: "{{dest_file}}"
+        dest: /home/ubuntu/ansible-demo/input/
         mode: 0644
 
     - name: create deployment list
       shell: main.sh
+
+  #delegate_to: localhost

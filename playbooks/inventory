@@ -1,7 +1,9 @@
 [servers]
-
-kamalMasterNode0 ansible_host=172.31.35.187
-jenkins-server ansible_host=172.31.43.218 
+172.31.35.187
+172.31.43.218
+#localhost ansible_host=172.31.43.218
+#kamalMasterNode0 ansible_host=172.31.35.187
+#jenkins-server ansible_host=172.31.43.218 
 
 
 [servers:vars]
