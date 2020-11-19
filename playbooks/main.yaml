@@ -1,27 +1,29 @@
 ---
 - name: helm deployment 
-  hosts: localhost
+  hosts: servers
   gather_facts: False
    
   tasks:
 
     - name: copy deployment package to remote server
       copy:
-        src: ./Demo-ACH_master/*.tgz
+        src: ./playbooks/files
         dest: /home/ubuntu/tmp/
-        mode: 0600
+        mode: 0644
 
-    # - name: Print debug message
-      # debug:
-        # msg: Hello, world!    
+    # - name: Unarchive a file that is already on the remote machine
+      # unarchive:
+        # src: /tmp/foo.zip
+        # dest: /usr/local/bin
+        # remote_src: yes    
 
-    # - name: copy deployment script
-      # copy:
-        # src: ./playbooks/main.sh
-        # dest: /home/ubuntu/tmp/
-        # mode: 0600
+    - name: copy deployment script
+      copy:
+        src: ./playbooks/main.sh
+        dest: /home/ubuntu/tmp/
+        mode: 0644
 
-    # - name: create deployment list
-      # script: ./ubuntu/tmp/main.sh
+    - name: create deployment list
+      script: ./ubuntu/tmp/main.sh
 
-  #delegate_to: localhost
+  delegate_to: localhost
